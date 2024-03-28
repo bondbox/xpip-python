@@ -3,18 +3,18 @@
 from setuptools import find_packages
 from setuptools import setup
 
-from xpip.utils import __author__
-from xpip.utils import __author_email__
-from xpip.utils import __description__
-from xpip.utils import __name__
-from xpip.utils import __url_bugs__
-from xpip.utils import __url_code__
-from xpip.utils import __url_docs__
-from xpip.utils import __url_home__
-from xpip.utils import __version__
+from xpip_build.utils import __author__
+from xpip_build.utils import __author_email__
+from xpip_build.utils import __description__
+from xpip_build.utils import __project__
+from xpip_build.utils import __url_bugs__
+from xpip_build.utils import __url_code__
+from xpip_build.utils import __url_docs__
+from xpip_build.utils import __url_home__
+from xpip_build.utils import __version__
 
 setup(
-    name=__name__,
+    name=__project__,
     version=__version__,
     description=__description__,
     keywords=["setuptools", "wheel", "twine"],
@@ -24,7 +24,7 @@ setup(
     project_urls={"Source Code": __url_code__,
                   "Bug Tracker": __url_bugs__,
                   "Documentation": __url_docs__},
-    packages=find_packages(include=["xpip*"], exclude=["xpip_mirror*"]),
+    packages=find_packages(include=["xpip_build*"]),
     install_requires=["argcomplete", "tabulate", "setuptools >= 51.0.0",
                       "wheel", "twine", "keyring", "keyrings.alt",
                       "xpip-mirror"],

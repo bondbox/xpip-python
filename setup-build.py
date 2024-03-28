@@ -3,21 +3,21 @@
 from setuptools import find_packages
 from setuptools import setup
 
-from xpip_build.utils import __author__
-from xpip_build.utils import __author_email__
-from xpip_build.utils import __description__
-from xpip_build.utils import __project__
-from xpip_build.utils import __url_bugs__
-from xpip_build.utils import __url_code__
-from xpip_build.utils import __url_docs__
-from xpip_build.utils import __url_home__
-from xpip_build.utils import __version__
+from xpip_build.util import __author__
+from xpip_build.util import __author_email__
+from xpip_build.util import __description__
+from xpip_build.util import __project__
+from xpip_build.util import __url_bugs__
+from xpip_build.util import __url_code__
+from xpip_build.util import __url_docs__
+from xpip_build.util import __url_home__
+from xpip_build.util import __version__
 
 setup(
     name=__project__,
     version=__version__,
     description=__description__,
-    keywords=["setuptools", "wheel", "twine"],
+    keywords=["setuptools", "wheel"],
     url=__url_home__,
     author=__author__,
     author_email=__author_email__,
@@ -25,11 +25,6 @@ setup(
                   "Bug Tracker": __url_bugs__,
                   "Documentation": __url_docs__},
     packages=find_packages(include=["xpip_build*"]),
-    install_requires=["argcomplete", "tabulate", "setuptools >= 51.0.0",
-                      "wheel", "twine", "keyring", "keyrings.alt",
-                      "xpip-mirror"],
-    entry_points={"console_scripts": [
-        "xpip-version = xpip.cmds.version:main",
-        "xpip-build = xpip.cmds.build:main",
-        "xpip-upload = xpip.cmds.upload:main"]},
+    install_requires=["setuptools >= 51.0.0"],
+    entry_points={"console_scripts": ["xpip-build = xpip_build.cmds:main",]},
 )

@@ -27,6 +27,7 @@ setup(
     packages=find_packages(include=["xpip_mirror*"]),
     package_data={"xpip_mirror.config": ["mirrors.toml"]},
     python_requires="",
-    install_requires=["xarg-python >= 1.3", "pip", "toml", "ping3",],
+    install_requires=["xarg-python >= 1.3", "tabulate",
+                      "pip", "toml", "ping3"],
     entry_points={"console_scripts": ["xpip-mirror = xpip_mirror.cmds:main"]},
 )
